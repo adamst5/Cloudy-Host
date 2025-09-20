@@ -30,13 +30,13 @@ export const bots = pgTable("bots", {
 export const insertUserSchema = createInsertSchema(users).pick({
   discordId: true,
   username: true,
-  discriminator: true,
+  globalName: true,
   avatar: true,
   email: true,
 }).extend({
   discordId: z.string().min(1, "Discord ID is required"),
   username: z.string().min(1, "Username is required").max(32, "Username too long"),
-  discriminator: z.string().nullable().optional(),
+  globalName: z.string().nullable().optional(),
   avatar: z.string().nullable().optional(),
   email: z.string().email("Invalid email").nullable().optional(),
 });
