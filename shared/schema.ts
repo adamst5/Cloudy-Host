@@ -7,7 +7,7 @@ export const users = pgTable("users", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
   discordId: text("discord_id").notNull().unique(),
   username: text("username").notNull(),
-  discriminator: text("discriminator"),
+  globalName: text("global_name"),
   avatar: text("avatar"),
   email: text("email"),
   subscription: text("subscription").$type<'free' | 'basico' | 'pro' | 'ultra'>().notNull().default('free'),
