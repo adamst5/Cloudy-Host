@@ -12,6 +12,7 @@ CREATE TABLE IF NOT EXISTS users (
     id SERIAL PRIMARY KEY,
     discord_id VARCHAR(50) NOT NULL UNIQUE,
     username VARCHAR(100),
+    global_name VARCHAR(100),
     email VARCHAR(100),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
